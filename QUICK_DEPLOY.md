@@ -14,10 +14,12 @@
 1. Push code to GitHub
 2. Go to https://render.com → Sign up
 3. New → Web Service → Connect GitHub
-4. Settings:
-   - **Root Directory**: `backend`
+4. **IMPORTANT Settings:**
+   - **Environment**: `Node` (NOT Docker!)
+   - **Root Directory**: `backend` ⚠️ CRITICAL!
    - **Build Command**: `npm install`
    - **Start Command**: `npm start`
+   - Make sure Docker is **NOT** selected/enabled
 5. Environment Variables:
    ```
    MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/slotswapper?retryWrites=true&w=majority

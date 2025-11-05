@@ -7,8 +7,10 @@ services:
     env: node
     region: oregon  # Change to your preferred region
     plan: free
+    rootDir: backend  # Important: Set root directory to backend folder
     buildCommand: npm install
     startCommand: npm start
+    dockerfilePath: ""  # Explicitly disable Docker
     envVars:
       - key: NODE_ENV
         value: production
