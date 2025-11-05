@@ -1,0 +1,23 @@
+# Render Blueprint for SlotSwapper
+# Deploy this by connecting your GitHub repo to Render and selecting this file
+
+services:
+  - type: web
+    name: slotswapper-backend
+    env: node
+    region: oregon  # Change to your preferred region
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard
+      - key: JWT_SECRET
+        sync: false  # Set this in Render dashboard
+      - key: FRONTEND_URL
+        sync: false  # Set this in Render dashboard after frontend deploys
+
